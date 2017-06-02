@@ -1,0 +1,41 @@
+<div class="maindiv">
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+
+    <api-details-header 
+        apiTitle="Entity Linking"
+        apiDescription="Sometimes in different contexts, a word might be used as a named entity, a verb, or another word form within a given sentence. For example, in the case where “times” is a named entity, it still may refer to two separately distinguishable entities, such as “The New York Times” or “Times Square”. Given a specific paragraph of text within a document, the Entity Linking Intelligence Service will recognize and identify each separate entity based on the context."
+        rowStyleClass="tablerow1"
+    >
+    <div api-content>
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-6">
+                    <div class="input-section" style="align-content: center">
+                        <textarea [(ngModel)]="textToAnalyze" style="resize:none"></textArea>
+                        <button class="cosmosButton-stretched btn btn-info" (click)="analyzeText()">Analyze</button>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <output-section style="height: 240px"
+                        [showButtons]="showCodeButtons" 
+                        [isApiResultLoading]="isLoading"
+                        buttonContextText="Highlight Content" 
+                        jsonText="{{ entityLink | json }}"
+                    >
+                            <div formatted-output [innerHtml]="formattedResult" style="height: 200px;overflow-y: scroll;padding: 10px;">
+                            </div>
+                    </output-section>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                <div class="btn-row">
+                    <button class="cosmosButton-withmargin btn btn-info pull-left" (click)="insertSample1()" style="margin-left:0px">Sample 1</button>
+                    <button class="cosmosButton-withmargin btn btn-info pull-left" (click)="insertSample2()">Sample 2</button>
+                    <button class="cosmosButton-withmargin btn btn-info pull-left" (click)="insertSample3()">Sample 3</button>
+                </div>
+                </div>
+            </div> 
+    </div>
+    </api-details-header>
+</div>

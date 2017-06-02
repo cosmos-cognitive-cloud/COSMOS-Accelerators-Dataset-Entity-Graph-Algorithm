@@ -1,0 +1,34 @@
+
+.input-section {
+    height: 240px!important;
+}
+
+.input-section textarea {
+    height:200px;
+    width:100%;
+}
+
+.formatted-result {
+    background-color:white;
+}
+
+.btnAnalyze
+{
+    margin-top: 0px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 0px;   
+}
+
+.btnSample
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+.btn-row
+{
+    margin-top:10px;
+}
+
